@@ -1,0 +1,53 @@
+//Task1:
+
+var Stu1 = {
+  firstname: "Karthik",
+  lastname: "Raja",
+};
+
+var stu2 = {
+  firstname: "Dinesh",
+  lastname: "Kumar",
+};
+
+var getname = function () {
+  return `His 1st Name is ${this.firstname} & his Last Name is ${this.lastname}`;
+};
+console.log(getname.call(stu2));
+console.log(getname.apply(Stu1));
+var x = getname.bind(Stu1);
+console.log(x());
+
+//Task2:
+class Account {
+  constructor(name, accNo, balance) {
+    //member variable
+    this.name = name;
+    this.acountNo = accNo;
+    this.balance = balance;
+  }
+
+  getBalance() {
+    return `${this.name} your Balance is ${this.balance}`;
+  }
+  withdraw(a) {
+    if (a <= this.balance) {
+      this.balance = this.balance - a;
+      return `Withdrawing ${a} ${this.getBalance()}`;
+    } else {
+      return `Insufficient Balance `;
+    }
+  }
+  deposit(b) {
+    this.balance = this.balance + b;
+    return `Depositing ${b} ${this.getBalance()}`;
+  }
+}
+const Raja = new Account("Raja", 150, 100000);
+const Karthik = new Account("Karthik", 151, 110000);
+const DK = new Account("DK", 152, 120000);
+console.log(Raja);
+console.log(Karthik);
+console.log(DK.withdraw(130000));
+console.log(Raja.withdraw(20000));
+console.log(Raja.deposit(40000));
