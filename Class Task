@@ -1,0 +1,69 @@
+const scores = [
+  {
+    marks: 32,
+    name: "Yvette Merritt",
+  },
+  {
+    marks: 57,
+    name: "Lillian Ellis",
+  },
+  {
+    marks: 22,
+    name: "Mccall Carter",
+  },
+  {
+    marks: 21,
+    name: "Pate Collier",
+  },
+  {
+    marks: 91,
+    name: "Debra Beard",
+  },
+  {
+    marks: 75,
+    name: "Nettie Hancock",
+  },
+  {
+    marks: 20,
+    name: "Hatfield Hodge",
+  },
+];
+//Task1:
+
+const names = scores.map((n) => n.name);
+console.log(`Task1: Displaying Only Names: ${names}`);
+
+//Task2:
+
+const pass = scores.filter((n) => n.marks >= 40);
+console.log(`Task2: Pass perosns details ↓`);
+console.log(pass);
+
+//Task3:
+
+const fail = scores.filter((n) => n.marks < 40);
+const failnames = fail.map((n) => n.name);
+console.log(`Task3: fail list only names:[ ${failnames}]`);
+
+//task4:
+
+const avgfilt = scores.map((n) => n.marks);
+const sum = avgfilt.reduce((n, curr) => n + curr);
+const avg = sum / avgfilt.length;
+console.log(`Task4: Average is ${avg}`);
+
+//task5:
+
+const mark = scores.map((n) => n.marks);
+var max = 0;
+const filt = mark.filter(function (n) {
+  if (n > max) {
+    max = n;
+  }
+});
+const maxname = scores.map(function (n) {
+  if (n.marks == max) {
+    return n.name;
+  }
+});
+console.log(`Task5: The toper Name is: ${maxname.filter((n) => n)}`);
