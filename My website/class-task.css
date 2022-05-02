@@ -1,0 +1,31 @@
+.poster-image {
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 30px;
+}
+body {
+  background-color: rgb(29, 3, 3);
+  color: rgb(214, 196, 196);
+  font-family: sans-serif;
+  font-size: 8px;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+h1 {
+  text-align: center;
+  line-height: 0%;
+  color: #fff;
+  font-size: 50px;
+}
+p {
+  text-align: center;
+  line-height: 3px;
+  word-spacing: 1.5px;
+  font-size: 20px;
+}
+#f-line {
+  color: rgb(167, 133, 132);
+  line-height: 20px;
+}
